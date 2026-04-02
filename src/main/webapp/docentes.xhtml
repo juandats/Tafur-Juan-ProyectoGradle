@@ -9,40 +9,43 @@
         <title>Gestionar Docentes</title>
     </h:head>
     <h:body>
-        <p:card style="width: 25rem; margin-bottom: 2em">
-            
-            <f:facet name="title"> Gestionar Docentes </f:facet>
-            <h:panelGrid columns="3">
-                <p:outputLabel for="txfNuip" value="NUIP: " />
-                <p:inputText id="txfNuip"> </p:inputText>
-                <p:message for="txfNuip"> </p:message>
-                
-                <p:outputLabel for="txfNombres" value="Nombres: " />
-                <p:inputText id="txfNombres"> </p:inputText>
-                <p:message for="txfNombres"> </p:message>
-                
-                <p:outputLabel for="txfApellidos" value="Apellidos: " />
-                <p:inputText id="txfApellidos"> </p:inputText>
-                <p:message for="txfApellidos"> </p:message>
-                
-                <p:outputLabel for="txfGenero" value="Género: " />
-                <p:selectOneMenu id="txfGenero">
-                    <f:selectItem itemLabel="Masculino" itemValue="M" />
-                    <f:selectItem itemLabel="Femenino" itemValue="F" />
-                </p:selectOneMenu>
-                <p:message for="txfGenero"> </p:message>
-                
-                <p:outputLabel for="txfProfesion" value="Profesión: " />
-                <p:inputText id="txfProfesion"> </p:inputText>
-                <p:message for="txfProfesion"> </p:message>
-                
-            </h:panelGrid>
-            <f:facet name="footer">
-                <p:commandButton icon="pi pi-check" value="Save"/>
-                <p:commandButton icon="pi pi-times" value="Cancel" 
-                                 styleClass="ui-button-secondary" 
-                                 style="margin-left: .5em"/>
-            </f:facet>
-        </p:card>
+        <h:form>
+            <p:card style="width: 25rem; margin-bottom: 2em">
+
+                <f:facet name="title"> Gestionar Docentes </f:facet>
+                <h:panelGrid columns="3">
+                    <p:outputLabel for="txfNuip" value="NUIP: " />
+                    <p:inputText id="txfNuip"> </p:inputText>
+                    <p:message for="txfNuip"> </p:message>
+
+                    <p:outputLabel for="txfNombres" value="Nombres: " />
+                    <p:inputText id="txfNombres"> </p:inputText>
+                    <p:message for="txfNombres"> </p:message>
+
+                    <p:outputLabel for="txfApellidos" value="Apellidos: " />
+                    <p:inputText id="txfApellidos"> </p:inputText>
+                    <p:message for="txfApellidos"> </p:message>
+
+                    <p:outputLabel for="txfGenero" value="Género: " />
+                    <p:selectOneMenu id="txfGenero">
+                        <f:selectItem itemLabel="Masculino" itemValue="M" />
+                        <f:selectItem itemLabel="Femenino" itemValue="F" />
+                    </p:selectOneMenu>
+                    <p:message for="txfGenero"> </p:message>
+
+                    <p:outputLabel for="txfProfesion" value="Profesión: " />
+                    <p:inputText id="txfProfesion"> </p:inputText>
+                    <p:message for="txfProfesion"> </p:message>
+
+                </h:panelGrid>
+                <f:facet name="footer">
+                    <p:commandButton icon="pi pi-check" value="Save"/>
+                    <p:commandButton icon="pi pi-times" value="Cancel" 
+                                     styleClass="ui-button-secondary" 
+                                     style="margin-left: .5em"/>
+                </f:facet>
+            </p:card>
+        </h:form>
     </h:body>
+
 </html>
