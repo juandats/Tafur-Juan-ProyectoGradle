@@ -1,4 +1,6 @@
+# NetBeans / Gradle cache
 .gradle/
 build/
 nbproject/private/
-*.log
+nb-configuration.xml
+*.ser

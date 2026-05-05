@@ -7,11 +7,18 @@ repositories {
 }
 
 dependencies {
-    providedCompile 'jakarta.platform:jakarta.jakartaee-web-api:11.0.0'
+    // https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-web-api
+    compileOnly 'jakarta.platform:jakarta.jakartaee-web-api:11.0.0'
     
+    // https://mvnrepository.com/artifact/org.primefaces/primefaces
     implementation 'org.primefaces:primefaces:12.0.0:jakarta'
     
-    testImplementation     'junit:junit:4.13'
+    // https://mvnrepository.com/artifact/org.eclipse.persistence/org.eclipse.persistence.jpa
+    implementation 'org.eclipse.persistence:org.eclipse.persistence.jpa:4.0.2'
+    
+    // https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
+    implementation 'com.mysql:mysql-connector-j:9.7.0'
+    
+    // https://mvnrepository.com/artifact/junit/junit
+    testImplementation 'junit:junit:4.13'
 }
-
-
