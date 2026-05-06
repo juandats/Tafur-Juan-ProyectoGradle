@@ -1,6 +1,5 @@
-# NetBeans / Gradle cache
 .gradle/
 build/
-nbproject/private/
-nb-configuration.xml
 *.ser
+._*
+.DS_Store
