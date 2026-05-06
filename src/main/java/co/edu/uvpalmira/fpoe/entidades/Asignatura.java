@@ -40,6 +40,40 @@ public class Asignatura  extends AbstractEntity{
         this.creditos = creditos;
         this.intensidadHoraria = intensidadHoraria;
     }
+
+    public short getCodigoAsignatura() {
+        return codigoAsignatura;
+    }
+
+    public void setCodigoAsignatura(short codigoAsignatura) {
+        this.codigoAsignatura = codigoAsignatura;
+    }
+
+    public String getNombres() {
+        return nombres;
+    }
+
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
+
+    public short getCreditos() {
+        return creditos;
+    }
+
+    public void setCreditos(short creditos) {
+        this.creditos = creditos;
+    }
+
+    public short getIntensidadHoraria() {
+        return intensidadHoraria;
+    }
+
+    public void setIntensidadHoraria(short intensidadHoraria) {
+        this.intensidadHoraria = intensidadHoraria;
+    }
+    
+    
     
     
     

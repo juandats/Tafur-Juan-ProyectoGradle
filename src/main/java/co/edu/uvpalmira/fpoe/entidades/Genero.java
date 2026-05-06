@@ -18,4 +18,6 @@ public enum Genero {
     @Enumerated(EnumType.STRING)
     NO_ESPECIFICADO, FEMENINO, MASCULINO;
     
+    
+    
 }

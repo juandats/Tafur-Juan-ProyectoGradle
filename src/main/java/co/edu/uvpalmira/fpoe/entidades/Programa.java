@@ -39,6 +39,39 @@ public class Programa extends AbstractEntity{
         this.estudiante = estudiante;
     }
 
+    public short getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(short codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Cupo getCupo() {
+        return cupo;
+    }
+
+    public void setCupo(Cupo cupo) {
+        this.cupo = cupo;
+    }
+
+    public Estudiante getEstudiante() {
+        return estudiante;
+    }
+
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
+    }
+
+    
    
    
 }

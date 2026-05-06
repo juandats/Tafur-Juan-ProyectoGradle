@@ -40,9 +40,19 @@ public class Estudiante extends Persona{
         return codigoEstudiante;
     }
 
+    public void setCodigoEstudiante(short codigoEstudiante) {
+        this.codigoEstudiante = codigoEstudiante;
+    }
+
     public Programa getPrograma() {
         return programa;
     }
+
+    public void setPrograma(Programa programa) {
+        this.programa = programa;
+    }
+
+   
 
     
 

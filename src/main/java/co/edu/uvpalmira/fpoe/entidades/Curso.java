@@ -57,7 +57,64 @@ public class Curso extends AbstractEntity{
         this.docente = docente;
         this.asignatura = asignatura;
     }
+
+    public short getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(short grupo) {
+        this.grupo = grupo;
+    }
+
+    public short getTotalCupos() {
+        return totalCupos;
+    }
+
+    public void setTotalCupos(short totalCupos) {
+        this.totalCupos = totalCupos;
+    }
+
+    public Periodo getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(Periodo periodo) {
+        this.periodo = periodo;
+    }
+
+    public Docente getDocente() {
+        return docente;
+    }
+
+    public void setDocente(Docente docente) {
+        this.docente = docente;
+    }
+
+    public Asignatura getAsignatura() {
+        return asignatura;
+    }
+
+    public void setAsignatura(Asignatura asignatura) {
+        this.asignatura = asignatura;
+    }
+
+    public List<Horario> getHorarios() {
+        return horarios;
+    }
+
+    public void setHorarios(List<Horario> horarios) {
+        this.horarios = horarios;
+    }
+
+    public List<Cupo> getCupos() {
+        return cupos;
+    }
+
+    public void setCupos(List<Cupo> cupos) {
+        this.cupos = cupos;
+    }
    
+    
    
 
     

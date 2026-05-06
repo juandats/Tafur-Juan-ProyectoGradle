@@ -28,6 +28,32 @@ public class Horario {
         this.dayOfWeek = dayOfWeek;
     }
 
+    public LocalTime getHora_Inicio() {
+        return Hora_Inicio;
+    }
+
+    public void setHora_Inicio(LocalTime Hora_Inicio) {
+        this.Hora_Inicio = Hora_Inicio;
+    }
+
+    public LocalTime getHora_Finalizacion() {
+        return Hora_Finalizacion;
+    }
+
+    public void setHora_Finalizacion(LocalTime Hora_Finalizacion) {
+        this.Hora_Finalizacion = Hora_Finalizacion;
+    }
+
+    public DayOfWeek getDayOfWeek() {
+        return dayOfWeek;
+    }
+
+    public void setDayOfWeek(DayOfWeek dayOfWeek) {
+        this.dayOfWeek = dayOfWeek;
+    }
+    
+    
+
     
     
             

@@ -43,17 +43,35 @@ public class Persona extends AbstractEntity{
         return nuip;
     }
 
+    public void setNuip(short nuip) {
+        this.nuip = nuip;
+    }
+
     public String getNombres() {
         return nombres;
+    }
+
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
     public String getApellidos() {
         return apellidos;
     }
 
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
     public Genero getGenero() {
         return genero;
     }
+
+    public void setGenero(Genero genero) {
+        this.genero = genero;
+    }
+
+   
 
     
     

@@ -31,6 +31,32 @@ public class Cupo extends AbstractEntity {
         this.disponibles = disponibles;
         this.programa = programa;
     }
+
+    public short getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(short cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public short getDisponibles() {
+        return disponibles;
+    }
+
+    public void setDisponibles(short disponibles) {
+        this.disponibles = disponibles;
+    }
+
+    public Programa getPrograma() {
+        return programa;
+    }
+
+    public void setPrograma(Programa programa) {
+        this.programa = programa;
+    }
+    
+    
     
     
     

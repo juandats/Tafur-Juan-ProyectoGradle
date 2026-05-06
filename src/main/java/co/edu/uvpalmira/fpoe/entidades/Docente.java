@@ -23,4 +23,15 @@ public class Docente extends Persona {
         super(nuip, nombres, apellidos, genero);
         this.profesion = profesion;
     } 
+
+    public String getProfesion() {
+        return profesion;
+    }
+
+    public void setProfesion(String profesion) {
+        this.profesion = profesion;
+    }
+    
+    
+    
 }
