@@ -2,11 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package co.edu.uvpalmira.fpoe.entidades;
+package co.edu.uvpalmira.fpoe.modelo;
 
 import co.edu.uvpalmira.fpoe.jpalib.AbstractEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 
 /**
  *
@@ -14,19 +16,26 @@ import jakarta.persistence.Entity;
  */
 
 @Entity
-public class Asignatura  extends AbstractEntity{
+@NamedQueries({
+    @NamedQuery(name = "Asignatura.buscarPorCodigo", 
+            query = "SELECT a from Asignatura a WHERE a.codigoAsignatura = :codigoAsignatura"),
     
-    @Column (nullable = false, unique = true, length = 25)
+    @NamedQuery(name = "Asignatura.buscarPorEscuela", 
+            query = "Select a From Asignatura a WHERE a.codigoAsignatura LIKE :prefijo")
+})
+public class Asignatura extends AbstractEntity{
+    
+    @Column (nullable = false, unique = true, length = 10)
     private String codigoAsignatura;
     
-    @Column (nullable = false, unique = true, length = 100)
+    @Column (nullable = false, unique = false, length = 7100)
     private String nombres;
     
      @Column (nullable = false)
-    private short creditos;
+    private byte creditos;
     
      @Column (nullable = false)
-    private short intensidadHoraria;
+    private byte intensidadHoraria;
      
     //Constructor Vacio
 
@@ -34,7 +43,7 @@ public class Asignatura  extends AbstractEntity{
     }
     
 
-    public Asignatura(String codigoAsignatura, String nombres, short creditos, short intensidadHoraria) {
+    public Asignatura(String codigoAsignatura, String nombres, byte creditos,  byte intensidadHoraria) {
         this.codigoAsignatura = codigoAsignatura;
         this.nombres = nombres;
         this.creditos = creditos;
@@ -61,7 +70,7 @@ public class Asignatura  extends AbstractEntity{
         return creditos;
     }
 
-    public void setCreditos(short creditos) {
+    public void setCreditos(byte creditos) {
         this.creditos = creditos;
     }
 
@@ -69,7 +78,7 @@ public class Asignatura  extends AbstractEntity{
         return intensidadHoraria;
     }
 
-    public void setIntensidadHoraria(short intensidadHoraria) {
+    public void setIntensidadHoraria(byte intensidadHoraria) {
         this.intensidadHoraria = intensidadHoraria;
     }
     

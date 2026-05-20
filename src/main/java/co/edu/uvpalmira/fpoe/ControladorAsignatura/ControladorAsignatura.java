@@ -4,7 +4,8 @@
  */
 package co.edu.uvpalmira.fpoe.ControladorAsignatura;
 
-import co.edu.uvapalmira.fpoe.modelo.Asignatura;
+
+import co.edu.uvpalmira.fpoe.modelo.Asignatura;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Named;
 import java.io.Serializable;
