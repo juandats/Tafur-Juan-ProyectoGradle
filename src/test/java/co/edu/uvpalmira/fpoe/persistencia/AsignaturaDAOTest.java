@@ -4,6 +4,7 @@
  */
 package co.edu.uvpalmira.fpoe.persistencia;
 
+import co.edu.uvpalmira.fpoe.persistencia.dao.AsignaturaDAO;
 import co.edu.uvpalmira.fpoe.modelo.Asignatura;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -44,7 +45,8 @@ public class AsignaturaDAOTest {
             asignaturaDAO.create(asig);   
             this.id = asig.getId();
             System.out.println(this.id);
-
+            
+          
         } catch (Exception ex) {
             Logger.getLogger(AsignaturaDAOTest.class.getName()).log(Level.SEVERE, null, ex);
                     fail();
