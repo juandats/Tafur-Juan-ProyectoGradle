@@ -13,6 +13,7 @@ import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import java.io.Serializable;
 import java.sql.SQLIntegrityConstraintViolationException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -31,6 +32,10 @@ public class ControladorAsignatura implements Serializable {
 
     public Asignatura getAsignatura() {
         return asignatura;
+    }
+    
+    public List<Asignatura> getAsignaturas(){
+       return this.Ilogica.buscarAsignaturas();
     }
 
     public void guardar() {
@@ -77,12 +82,11 @@ public class ControladorAsignatura implements Serializable {
                     .log(Level.SEVERE, null, ex);
         }
     }
-    
-    //Evento de Cancelar/Borrar 
-    public void cancelEventHandler() { 
-        this.asignatura = new Asignatura(); 
-        FacesContext.getCurrentInstance().addMessage(null, 
-                new FacesMessage("Formulario borrado.")); }
-}
-    
 
+    //Evento de Cancelar/Borrar 
+    public void cancelEventHandler() {
+        this.asignatura = new Asignatura();
+        FacesContext.getCurrentInstance().addMessage(null,
+                new FacesMessage("Formulario borrado."));
+    }
+}

@@ -26,7 +26,7 @@ public interface ILogica {
     public Asignatura buscarAsignatura (String codigo);
     
     
-    public List<Asignatura> buscarAsignaturas (Asignatura asignatura);
+    public List<Asignatura> buscarAsignaturas();
     
     
     

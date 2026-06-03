@@ -3,6 +3,7 @@
   <persistence-unit name="ProjectPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <jta-data-source>jdbc/fpoedb-datasource</jta-data-source>
+    <class>co.edu.uvpalmira.fpoe.modelo.Asignatura</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>

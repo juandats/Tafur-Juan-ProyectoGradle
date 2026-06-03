@@ -56,7 +56,7 @@ public class LogicaImplementacion implements ILogica{
        }
 
     @Override
-    public List<Asignatura> buscarAsignaturas(Asignatura asignatura) {
+    public List<Asignatura> buscarAsignaturas() {
         return this.asignaturaDAO.findEntities();
          }
     

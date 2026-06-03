@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
@@ -12,59 +12,65 @@
     </h:head>
 
     <h:body>
-        <h:form>
-            <p:card style="width: 35rem; margin-bottom: 2em">
+            
+            <h:form id="formulario">
+                
+                <p:card style="width: 35rem; margin-bottom: 2em">
 
-                <f:facet name="title">Gestionar Asignaturas</f:facet>
+                    <f:facet name="title">Gestionar Asignaturas </f:facet>
 
-                <h:panelGrid columns="3">
-                    <p:outputLabel for="txfCodigo" value="Codigo : " />
-                    <p:inputText id="txfCodigo" value="#{asignCtrl.asignatura.codigo}"></p:inputText>
-                    <p:message for="txfCodigo"/>
+                    <h:panelGrid columns="3">
+                        
+                        <p:outputLabel for="txfCodigo" value="Codigo : " />
+                        <p:inputText id="txfCodigo" value="#{asignCtrl.asignatura.codigoAsignatura}" required="true"/> 
+                        <p:message for="txfCodigo"/>
 
-                    <p:outputLabel for="txfNombre" value="Nombre : " />
-                    <p:inputText id="txfNombre" value="#{asignCtrl.asignatura.nombre}"></p:inputText>
-                    <p:message for="txfNombre"/>
+                        <p:outputLabel for="txfNombre" value="Nombre : " />
+                        <p:inputText id="txfNombre" value="#{asignCtrl.asignatura.nombres}"/>
+                        <p:message for="txfNombre"/>
 
-                    <p:outputLabel for="txfCreditos" value="Créditos : " /> 
-                    <p:inputText id="txfCreditos" value="#{asignCtrl.asignatura.creditos}"></p:inputText>
-                    <p:message for="txfCreditos"/>
+                        <p:outputLabel for="txfCreditos" value="Créditos : " /> 
+                        <p:inputText id="txfCreditos" value="#{asignCtrl.asignatura.creditos}"/>
+                        <p:message for="txfCreditos"/>
 
-                    <p:outputLabel for="txfIntensidad" value="Intensidad : " /> 
-                    <p:inputText id="txfIntensidad"/>
-                    <p:message for="txfIntensidad"/>
-                </h:panelGrid>
+                        <p:outputLabel for="txfIntensidad" value="Intensidad : " /> 
+                        <p:inputText id="txfIntensidad" value="#{asignCtrl.asignatura.intensidadHoraria}"/>
+                        <p:message for="txfIntensidad"/>
+                    </h:panelGrid>
 
-                <f:facet name="footer">
-                    <p:commandButton icon="pi pi-check" value="Save"/>
-                    <p:commandButton icon="pi pi-times" value="Cancel"
-                                     styleClass="ui-button-secondary"
-                                     style="margin-left: .5em"/>
-                </f:facet> 
+                    <p:messages id="mensajes" globalOnly="true" closable="true"  />
 
+                    <f:facet name="footer">
+                        <p:commandButton icon="pi pi-check" value="Guardar"
+                                         action="#{asignCtrl.guardar()}"
+                                         process="@this txfCodigo txfNombre txfCreditos txfIntensidad"
+                                         update=" txfCodigo txfNombre txfCreditos txfIntensidad tabla mensajes"
+                                         
+                                         />
+                        <p:commandButton icon="pi pi-times" value="Cancelar"
+                                         styleClass="ui-button-secondary"
+                                         style="margin-left: .5em"
 
-
-            </p:card>
-
+                                         action="#{asignCtrl.cancelEventHandler()}"
+                                         process="@this"
+                                         update="mensajes txfCodigo txfNombre txfCreditos txfIntensidad"/>
+                    </f:facet> 
+                </p:card>
+            </h:form>
+            
             <p:card style="width: 50rem; margin-bottom: 2em">
-                <p:dataTable var="product" value="#{dtBasicView.products}">
-                    <p:column headerText="Code">
-                        <h:outputText value="#{product.code}" />
-                    </p:column>
+                
+                <p:dataTable id="tabla" value="#{asignCtrl.asignaturas}" var="obj">
+                    <p:column headerText="CodigoAsignatura">#{obj.codigoAsignatura}</p:column>
 
-                    <p:column headerText="Name">
-                        <h:outputText value="#{product.name}" />
-                    </p:column>
+                    <p:column headerText="Nombres">#{obj.nombres}</p:column>
 
-                    <p:column headerText="Category">
-                        <h:outputText value="#{product.category}" />
-                    </p:column>
-
-                    <p:column headerText="Quantity">
-                        <h:outputText value="#{product.quantity}" />
-                    </p:column>
+                    <p:column headerText="Intensidad">#{obj.intensidadHoraria}</p:column>
+                       
+                    <p:column headerText="Creditos">#{obj.creditos}</p:column>
+                        
+                        
                 </p:dataTable>
             </p:card>
-        </h:form>
     </h:body>
 </html>

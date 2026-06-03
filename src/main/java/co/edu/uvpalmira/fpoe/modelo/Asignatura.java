@@ -9,41 +9,44 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.NamedQueries;
 import jakarta.persistence.NamedQuery;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
 
 /**
  *
  * @author Sala Sistemas
  */
-
 @Entity
 @NamedQueries({
-    @NamedQuery(name = "Asignatura.buscarPorCodigo", 
+    @NamedQuery(name = "Asignatura.buscarPorCodigo",
             query = "SELECT a from Asignatura a WHERE a.codigoAsignatura = :codigoAsignatura"),
-    
-    @NamedQuery(name = "Asignatura.buscarPorEscuela", 
+
+    @NamedQuery(name = "Asignatura.buscarPorEscuela",
             query = "Select a From Asignatura a WHERE a.codigoAsignatura LIKE :prefijo")
 })
-public class Asignatura extends AbstractEntity{
+public class Asignatura extends AbstractEntity {
     
-    @Column (nullable = false, unique = true, length = 10)
+    @NotEmpty
+    @Column(nullable = false, unique = true, length = 10)
     private String codigoAsignatura;
-    
-    @Column (nullable = false, unique = false, length = 7100)
-    private String nombres;
-    
-     @Column (nullable = false)
-    private byte creditos;
-    
-     @Column (nullable = false)
-    private byte intensidadHoraria;
-     
-    //Constructor Vacio
 
+    @NotEmpty
+    @Column(nullable = false, unique = false, length = 7100)
+    private String nombres;
+
+    @Min(value = 1)
+    @Column(nullable = false)
+    private byte creditos;
+
+    @Min(value = 1)
+    @Column(nullable = false)
+    private byte intensidadHoraria;
+
+    //Constructor Vacio
     public Asignatura() {
     }
-    
 
-    public Asignatura(String codigoAsignatura, String nombres, byte creditos,  byte intensidadHoraria) {
+    public Asignatura(String codigoAsignatura, String nombres, byte creditos, byte intensidadHoraria) {
         this.codigoAsignatura = codigoAsignatura;
         this.nombres = nombres;
         this.creditos = creditos;
@@ -66,7 +69,7 @@ public class Asignatura extends AbstractEntity{
         this.nombres = nombres;
     }
 
-    public short getCreditos() {
+    public byte getCreditos() {
         return creditos;
     }
 
@@ -74,17 +77,12 @@ public class Asignatura extends AbstractEntity{
         this.creditos = creditos;
     }
 
-    public short getIntensidadHoraria() {
+    public byte getIntensidadHoraria() {
         return intensidadHoraria;
     }
 
     public void setIntensidadHoraria(byte intensidadHoraria) {
         this.intensidadHoraria = intensidadHoraria;
     }
-    
-    
-    
-    
-    
-    
+
 }
