@@ -9,43 +9,87 @@
         <title>Gestionar Docentes</title>
     </h:head>
     <h:body>
-        <h:form>
+
+        <h:form id="formulario">
+
             <p:card style="width: 25rem; margin-bottom: 2em">
 
                 <f:facet name="title"> Gestionar Docentes </f:facet>
+
                 <h:panelGrid columns="3">
                     <p:outputLabel for="txfNuip" value="NUIP: " />
-                    <p:inputText id="txfNuip"> </p:inputText>
-                    <p:message for="txfNuip"> </p:message>
+                    <p:inputText id="txfNuip" value="#{docCtrl.docente.nuip}" required="true"/> 
+                    <p:message for="txfNuip"/> 
 
                     <p:outputLabel for="txfNombres" value="Nombres: " />
-                    <p:inputText id="txfNombres"> </p:inputText>
-                    <p:message for="txfNombres"> </p:message>
+                    <p:inputText id="txfNombres" value="#{docCtrl.docente.nombres}" required="true"/>
+                    <p:message for="txfNombres"/>
 
                     <p:outputLabel for="txfApellidos" value="Apellidos: " />
-                    <p:inputText id="txfApellidos"> </p:inputText>
-                    <p:message for="txfApellidos"> </p:message>
+                    <p:inputText id="txfApellidos" value="#{docCtrl.docente.apellidos}" required="true"/>
+                    <p:message for="txfApellidos"/>
 
                     <p:outputLabel for="txfGenero" value="Género: " />
-                    <p:selectOneMenu id="txfGenero">
+                    <p:selectOneMenu id="txfGenero" value="#{docCtrl.docente.genero}">
                         <f:selectItem itemLabel="Masculino" itemValue="M" />
                         <f:selectItem itemLabel="Femenino" itemValue="F" />
                     </p:selectOneMenu>
                     <p:message for="txfGenero"> </p:message>
 
                     <p:outputLabel for="txfProfesion" value="Profesión: " />
-                    <p:inputText id="txfProfesion"> </p:inputText>
-                    <p:message for="txfProfesion"> </p:message>
+                    <p:inputText id="txfProfesion" value="#{docCtrl.docente.profesion}"/> 
+                    <p:message for="txfProfesion"/> 
 
                 </h:panelGrid>
+
+                <p:messages id="mensajes" globalOnly="true" closable="true"  />
+
+
                 <f:facet name="footer">
-                    <p:commandButton icon="pi pi-check" value="Save"/>
-                    <p:commandButton icon="pi pi-times" value="Cancel" 
+                    <p:commandButton icon="pi pi-check" value="Guardar"
+                                     action="#{docCtrl.guardar()}"
+                                     process="@this txfNuip txfNombres txfApellidos txfGenero txfProfesion"
+                                     update="txfNuip txfNombres txfApellidos txfGenero txfProfesion tabla mensajes"
+
+                                     />
+
+
+                    <p:commandButton icon="pi pi-times" value="Cancel"
+                                     action="#{docCtrl.cancelEventHandler()}"
+                                     process="@this"
+                                     update="mensajes txfNuip txfNombres txfApellidos txfGenero txfProfesion"
                                      styleClass="ui-button-secondary" 
                                      style="margin-left: .5em"/>
                 </f:facet>
             </p:card>
+
+
+            <p:card style="width: 50rem; margin-bottom: 2em">
+
+                <p:dataTable id="tabla" value="#{docCtrl.docentes}" var="obj">
+                    <p:column headerText="Nuip">
+                        #{obj.nuip}
+                    </p:column>
+
+                    <p:column headerText="Nombres">
+                        #{obj.nombres}
+                    </p:column>
+
+                    <p:column headerText="Apellidos">
+                        #{obj.apellidos}
+                    </p:column>
+
+                    <p:column headerText="Genero">
+                        #{obj.genero}
+                    </p:column>
+
+                    <p:column headerText="Profesion">
+                        #{obj.profesion}
+                    </p:column>
+                </p:dataTable>
+            </p:card>
         </h:form>
+
     </h:body>
 
 </html>
